@@ -36,7 +36,7 @@ export class VehicleController {
   }
 
   @Patch(':id')
-  async update(@Param('id') id: string, @Body() updateVehicleDto: UpdateVehicleDto) : Promise<Vehicle> {
+  async update(@Param('id') id: string, @Body(ValidationPipe) updateVehicleDto: UpdateVehicleDto) : Promise<Vehicle> {
     return this.vehicleService.update(id, updateVehicleDto);
   }
 
