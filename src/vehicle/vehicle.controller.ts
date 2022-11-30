@@ -42,7 +42,7 @@ export class VehicleController {
 
   @Delete(':id')
   async remove(@Param('id') id: string) : Promise<string> {
-    return await this.vehicleService.remove(+id);
+    return await this.vehicleService.remove(id);
   }
 
 }

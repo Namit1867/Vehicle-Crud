@@ -76,8 +76,8 @@ export class VehicleService {
     return vehicle.save();
   }
 
-  async remove(id: number) {
-    const vehicle = await this.vehicleModel.deleteOne({ where: { id } });
+  async remove(id: string) {
+    const vehicle = await this.vehicleModel.deleteOne({ where: { id : id } });
     
     if(vehicle.acknowledged)
     return `#${id} vehicle removed`;
